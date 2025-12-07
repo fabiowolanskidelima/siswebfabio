@@ -3,22 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabio Wolanski de Lima</title>
+    <title>Fabio Wolanski | Portfólio Sumi-e</title>
+    
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+   
+   <link rel="stylesheet" href="style.css">
+  
 </head>
-<body>
-    <header>
-        <h1>Fabio Wolanski de Lima</h1>
+<body class="light-theme">
 
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+    
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="ink-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+        </defs>
+    </svg>
+
+    <header>
+        <div class="logo" onclick="navigateTo('home')">Fabio Wolanski de Lima</div>
+        
+        <div class="header-controls">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar Tema">
+                <span id="theme-icon">◎</span>
+            </button>
+
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#" onclick="handleNav(event, 'home')" class="nav-link active" data-target="home">Sobre</a></li>
+                    <li><a href="#" onclick="handleNav(event, 'education')" class="nav-link" data-target="education">Formação</a></li>
+                    <li><a href="#" onclick="handleNav(event, 'portfolio')" class="nav-link" data-target="portfolio">Portfólio</a></li>
+                    <li><a href="#" onclick="handleNav(event, 'contact')" class="nav-link" data-target="contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
+    <main>
+        <!-- HOME / SOBRE -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-text">
+                    <p style="color: var(--seal-red); font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 2px;">DESENVOLVEDOR WEB</p>
+                    <h1>Fabio Wolanski de Lima</h1>
+                    <p class="lead">
+                        "A simplicidade é o último grau de sofisticação."
+                    </p>
+                    <p style="margin-bottom: 2rem;">
+                        Especialista em criar interfaces digitais com a precisão de um traço único. 
+                        Foco em código limpo, performance e experiência do usuário.
+                    </p>
+                    <div>
+                        <button class="btn" onclick="handleNav(event, 'portfolio')">Ver Portfólio</button>
+                        <button class="btn btn-outline" onclick="handleNav(event, 'contact')">Contato</button>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <svg viewBox="0 0 200 200" class="enso-circle">
+                        <path d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0" 
+                              style="fill:none; stroke-width: 8; stroke-linecap:round; filter: url(#ink-filter);" />
+                    </svg>
+                    <div style="position: absolute; font-family: 'Cinzel'; font-size: 5rem; color: var(--text-color);">FW</div>
+                </div>
+            </div>
+        </section>
 
+        <!-- FORMAÇÃO -->
+        <section id="education" class="section">
+            <div style="text-align: center;"><h2>Formação</h2></div>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <span style="color: var(--seal-red); font-weight: bold;">1996 - 1999</span>
+                    <h3>Química</h3>
+                    <p style="font-style: italic;">Instituto Tecnologico do Paraná (IPE)</p>
+                    <p>Estudos em Quimica</p>
+                </div>
+
+                <div class="edu-card">
+                    <span style="color: var(--seal-red); font-weight: bold;">2001 - 2005</span>
+                    <h3>Estatistica</h3>
+                    <p style="font-style: italic;">UTFPR</p>
+                    <p>Estudos em Estatistica</p>
+                </div>
+                    
+                <div class="edu-card">
+                    <span style="color: var(--seal-red); font-weight: bold;">2010</span>
+                    <h3>Auditoria</h3>
+                    <p style="font-style: italic;">In Company</p>
+                    <p>Auditoria interna e externa lead assessor</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFÓLIO -->
+        <section id="portfolio" class="section">
+            <div style="text-align: center;"><h2>Portfólio</h2></div>
+            <div class="grid-container">
+                <!-- Projeto 1 -->
+                <div class="project-card">
+                    <div class="project-img">🗻</div>
+                    <div class="project-content">
+                        <h3>Site Institucional</h3>
+                        <p>Interface minimalista e responsiva.</p>
+                        <div class="tags" style="margin-top: 10px;">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="project-card">
+                    <div class="project-img">🌊</div>
+                    <div class="project-content">
+                        <h3>Fluxo de Tarefas</h3>
+                        <p>App de produtividade com persistência de dados.</p>
+                        <div class="tags" style="margin-top: 10px;">
+                            <span class="tag">JS</span>
+                            <span class="tag">Storage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="project-card">
+                    <div class="project-img">🎋</div>
+                    <div class="project-content">
+                        <h3>E-commerce Zen</h3>
+                        <p>Experiência de compra limpa e direta.</p>
+                        <div class="tags" style="margin-top: 10px;">
+                            <span class="tag">Frontend</span>
+                            <span class="tag">UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contact" class="section">
+            <div style="text-align: center;"><h2>Enviar Mensagem</h2></div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        "Uma jornada de mil milhas começa com um único passo."
+                    </p>
+                    <p>Vamos dar o primeiro passo juntos no seu próximo projeto.</p>
+                    <br>
+                    <p><strong>Email:</strong> contato@fabio.dev</p>
+                    <p><strong>Base:</strong> Curitiba, PR</p>
+                </div>
+
+                <div class="contact-form">
+                    <form onsubmit="handleForm(event)">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="email" placeholder="Seu Email" required>
+                        <textarea rows="4" placeholder="Sua Mensagem" required></textarea>
+                        <button type="submit" class="btn">Carimbar e Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><span class="hanko-stamp">FW</span> 2024 Fabio Wolanski de Lima. Arte em Código.</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+    
 
 </body>
 </html>
